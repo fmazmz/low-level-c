@@ -1,6 +1,8 @@
+#include "mem_audit.h"
 #include <stdio.h>
 
-int* modifyPointer(int *ptr) {
+
+static int* modifyPointer(int *ptr) {
     printf("\n[MODIFY] Dereferencing pointer at %p\n", ptr);
     printf("[BEFORE] Value: %d\n", *ptr);
 
@@ -10,12 +12,12 @@ int* modifyPointer(int *ptr) {
     return ptr;
 }
 
-
-
-int main() {
-    printf("===== INITIALIZE MEMORY =====\n");
+void initMem() {
+    printf("[INFO] Initializing stack variables on memory...\n");
     int nmr = 10;
     int *nmrPtr = &nmr;
+
+    printf("[INFO] Stack memory initialized\n");
 
     printf("\n[ALLOC] Variable 'nmr'\n");
     printf("Address : %p\n", &nmr);
@@ -30,8 +32,7 @@ int main() {
 
     printf("\n[FINAL STATE]\n");
     printf("Variable 'nmr' Value          : %d\n", nmr);
-    printf("Pointer 'nmrPtr' Address      : %p\n", nmrPtr);
-    printf("Pointer Dereferenced Value     : %d\n", *nmrPtr);
-
-    return 0;
+    printf("Pointer 'nmrPtr' Address      : %p\n", &nmrPtr);
+    printf("Points to                     : %p\n", nmrPtr);
+    printf("Pointer Dereferenced Value    : %d\n", *nmrPtr);
 }

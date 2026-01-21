@@ -4,4 +4,8 @@ project(low_level_c C)
 set(CMAKE_C_STANDARD 11)
 
 add_executable(low_level_c
-        src/basics/pointers.c)
+        src/pointers/mem_audit.c
+        src/basics/boot_sequence.c
+        src/main.c
+        src/basics/boot_sequence.h
+)
