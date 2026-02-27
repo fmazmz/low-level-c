@@ -8,4 +8,6 @@ add_executable(low_level_c
         src/basics/boot_sequence.c
         src/main.c
         src/basics/boot_sequence.h
+        src/files/write_to_file.c
+        src/files/write_to_file.h
 )
